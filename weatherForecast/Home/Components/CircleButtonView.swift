@@ -17,10 +17,11 @@ struct CircleButtonView: View {
             .frame(width: 50,height: 50)
             .background(
                 Circle()
-                    .foregroundColor(Color.theme.background)
+                    .stroke(lineWidth: 1)
+                    .foregroundColor(Color.theme.accent)
             )
             .shadow(
-                color: Color.theme.accent.opacity(0.25),
+                color: Color.theme.accent.opacity(0.4),
                 radius: 10, x: 0, y:0)
             .padding()
     }
