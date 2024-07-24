@@ -72,6 +72,7 @@ struct WeatherRowView: View {
                         .foregroundColor(Color.theme.accent)
                         .fontDesign(.rounded)
                 }
+                .frame(width: UIScreen.main.bounds.width * 0.22, alignment: .leading)
             }
             .padding(.bottom, 4)
             Divider()
@@ -101,6 +102,7 @@ struct WeatherRowView: View {
                         .fontDesign(.rounded)
                          
                 }
+                .frame(width: UIScreen.main.bounds.width * 0.22, alignment: .leading)
                 
             }
         }

@@ -34,7 +34,7 @@ struct HomeView: View {
                     .foregroundColor(Color.theme.accent)
                     .fontDesign(.rounded)
                 if let firstForecast = vm.forecast?.data?.first {
-                                       WeatherRowView(forecastData: firstForecast)
+                        WeatherRowView(forecastData: firstForecast)
                 } else {
                     Text("No forecasts available.")
                         .foregroundColor(.white)
