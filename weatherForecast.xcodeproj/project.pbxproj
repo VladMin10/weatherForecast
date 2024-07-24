@@ -25,6 +25,8 @@
 		26574A562C501BB700B5F617 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26574A552C501BB700B5F617 /* LocationManager.swift */; };
 		26574A5B2C50561A00B5F617 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26574A5A2C50561A00B5F617 /* PreviewProvider.swift */; };
 		26574A5D2C50683700B5F617 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26574A5C2C50683700B5F617 /* Time.swift */; };
+		26574A602C50E3E200B5F617 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = 26574A5F2C50E3E200B5F617 /* SwiftfulRouting */; };
+		26574A642C50ED5600B5F617 /* ForecastListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26574A632C50ED5600B5F617 /* ForecastListRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,7 @@
 		26574A572C503E0B00B5F617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26574A5A2C50561A00B5F617 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
 		26574A5C2C50683700B5F617 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		26574A632C50ED5600B5F617 /* ForecastListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26574A602C50E3E200B5F617 /* SwiftfulRouting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +164,7 @@
 				26574A442C4FDDFC00B5F617 /* CircleButtonView.swift */,
 				26574A462C4FDEAB00B5F617 /* SearchBarView.swift */,
 				26574A532C500A1100B5F617 /* WeatherRowView.swift */,
+				26574A632C50ED5600B5F617 /* ForecastListRowView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -191,6 +196,9 @@
 			dependencies = (
 			);
 			name = weatherForecast;
+			packageProductDependencies = (
+				26574A5F2C50E3E200B5F617 /* SwiftfulRouting */,
+			);
 			productName = weatherForecast;
 			productReference = 26574A242C4FD08500B5F617 /* weatherForecast.app */;
 			productType = "com.apple.product-type.application";
@@ -219,6 +227,9 @@
 				Base,
 			);
 			mainGroup = 26574A1B2C4FD08500B5F617;
+			packageReferences = (
+				26574A5E2C50E3E200B5F617 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+			);
 			productRefGroup = 26574A252C4FD08500B5F617 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -260,6 +271,7 @@
 				26574A562C501BB700B5F617 /* LocationManager.swift in Sources */,
 				26574A542C500A1100B5F617 /* WeatherRowView.swift in Sources */,
 				26574A4A2C4FDF0300B5F617 /* Color.swift in Sources */,
+				26574A642C50ED5600B5F617 /* ForecastListRowView.swift in Sources */,
 				26574A502C4FE89A00B5F617 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,6 +480,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		26574A5E2C50E3E200B5F617 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		26574A5F2C50E3E200B5F617 /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 26574A5E2C50E3E200B5F617 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 26574A1C2C4FD08500B5F617 /* Project object */;
 }

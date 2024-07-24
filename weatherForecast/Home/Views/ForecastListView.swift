@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct ForecastListView: View {
+    
+    @Environment(\.router) var router
     @EnvironmentObject private var vm: HomeViewModel
     private let screen = UIScreen.main.bounds.width
     
@@ -28,7 +31,8 @@ struct ForecastListView: View {
                                 Text(dayOfWeek(from: forecastData.validDate))
                                     .fontWeight(.medium)
                                     .font(.system(size: 18))
-                                
+                                    .frame(width: UIScreen.main.bounds.width * 0.35, alignment: .leading)
+                                    .padding(.leading, 13)
                                 Spacer()
                                 
                                 if let weatherIcon = forecastData.weather?.icon {
@@ -36,6 +40,8 @@ struct ForecastListView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 40, height: 40)
+                                        .frame(width: UIScreen.main.bounds.width * 0.30, alignment: .center)
+                                       
                                 }
                                 
                                 Spacer()
@@ -43,6 +49,8 @@ struct ForecastListView: View {
                                 Text("\(String(format: "%.1f", forecastData.temp ?? 0.0))°C")
                                     .fontWeight(.medium)
                                     .font(.system(size: 18))
+                                    .frame(width: UIScreen.main.bounds.width * 0.20, alignment: .trailing)
+                                    .padding(.trailing, 6)
                             }
                             .padding(.vertical, 8)
                         }
@@ -56,23 +64,13 @@ struct ForecastListView: View {
         }
     }
     
-    private func dayOfWeek(from dateString: String?) -> String {
-        guard let dateString = dateString else { return "Unknown" }
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"  // Переконайся, що це правильний формат
-        
-        guard let date = dateFormatter.date(from: dateString) else { return "Unknown" }
-        
-        let dayFormatter = DateFormatter()
-        dayFormatter.dateFormat = "EEEE"
-        return dayFormatter.string(from: date)
-    }
 }
 
 struct ForecastListView_Previews: PreviewProvider {
     static var previews: some View {
-        ForecastListView()
-            .environmentObject(dev.homeVM)
+        RouterView { _ in
+            ForecastListView()
+                .environmentObject(dev.homeVM)
+        }
     }
 }

@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct HomeView: View {
     
+    @Environment(\.router) var router
     @EnvironmentObject private var vm : HomeViewModel
     @State private var showForecastList : Bool = false
     @State private var showCitySearch : Bool = false
@@ -51,9 +53,8 @@ struct HomeView: View {
 
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View{
-        NavigationView{
+        RouterView{ _ in
             HomeView()
-                .navigationBarHidden(true)
         }
         .environmentObject(dev.homeVM)
         .preferredColorScheme(.dark)
@@ -89,8 +90,9 @@ extension HomeView {
             CircleButtonView(iconName: "line.3.horizontal")
                 .rotationEffect(Angle(degrees: showForecastList ? 90 : 0))
                 .onTapGesture {
-                    withAnimation(.spring()) {
-                        showForecastList.toggle()
+                    showForecastList = true
+                    router.showScreen(.push){ _ in
+                        ForecastListView()
                     }
                 }
         }
@@ -133,13 +135,17 @@ extension HomeView {
                              .fontWeight(.medium)
                         )
                     )
+                
                 Image(systemName: "arrow.right.circle.fill")
             }
             
             .fontWeight(.medium)
             .font(.system(size: 23))
             .onTapGesture {
-                showForecastList.toggle()
+                showForecastList = true
+                router.showScreen(.push){ _ in
+                    ForecastListView()
+                }
             }
         }
     }

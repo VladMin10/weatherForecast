@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 @main
 struct weatherForecastApp: App {
@@ -14,11 +15,15 @@ struct weatherForecastApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationView{
+            RouterView{ _ in
                 HomeView()
-                    .navigationBarHidden(true)
             }
             .environmentObject(vm)
+//            NavigationView{
+//                HomeView()
+//                    .navigationBarHidden(true)
+//            }
+//            .environmentObject(vm)
         }
     }
 }
