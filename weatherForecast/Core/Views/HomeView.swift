@@ -63,7 +63,9 @@ extension HomeView {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 2) {
                     Text(vm.forecast?.cityName ?? "City")
-                    Image(systemName: "arrow.up.forward")
+                    Image(systemName: "magnifyingglass")
+                        //.rotationEffect(.degrees(90))
+                        .fontWeight(.medium)
                         .onTapGesture {
                             showCitySearch = true
                             router.showScreen(.push) { _ in

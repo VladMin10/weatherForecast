@@ -90,7 +90,7 @@
 				26574A3E2C4FD4F000B5F617 /* Utilities */,
 				26574A3B2C4FD4A800B5F617 /* Services */,
 				26574A352C4FD36400B5F617 /* Models */,
-				26574A382C4FD46500B5F617 /* Home */,
+				26574A382C4FD46500B5F617 /* Core */,
 				26574A2B2C4FD08800B5F617 /* Assets.xcassets */,
 				26574A2D2C4FD08800B5F617 /* Preview Content */,
 			);
@@ -113,14 +113,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		26574A382C4FD46500B5F617 /* Home */ = {
+		26574A382C4FD46500B5F617 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				26574A412C4FDA2900B5F617 /* Components */,
 				26574A3A2C4FD48000B5F617 /* ViewModels */,
 				26574A392C4FD47500B5F617 /* Views */,
 			);
-			path = Home;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		26574A392C4FD47500B5F617 /* Views */ = {

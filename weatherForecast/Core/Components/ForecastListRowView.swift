@@ -46,6 +46,7 @@ struct ForecastListRowView: View {
                        //.padding(.trailing, 20)
                }
                .padding(.vertical, 8)
+               .padding(.horizontal)
            }
            
 

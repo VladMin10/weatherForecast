@@ -109,14 +109,6 @@ struct WeatherRowView: View {
         .padding()
     }
     
-    private func formatTime(from timestamp: Int?) -> String {
-        guard let timestamp = timestamp else { return "N/A" }
-        let date = Date(timeIntervalSince1970: TimeInterval(timestamp))
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        formatter.timeZone = TimeZone(abbreviation: "Europe/Kyiv")
-        return formatter.string(from: date)
-    }
 }
 
 #Preview {
