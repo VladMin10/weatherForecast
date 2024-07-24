@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-
 import SwiftUI
 
 extension PreviewProvider {
