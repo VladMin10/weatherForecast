@@ -19,11 +19,6 @@ struct weatherForecastApp: App {
                 HomeView()
             }
             .environmentObject(vm)
-//            NavigationView{
-//                HomeView()
-//                    .navigationBarHidden(true)
-//            }
-//            .environmentObject(vm)
         }
     }
 }

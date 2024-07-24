@@ -88,7 +88,7 @@ extension HomeView {
             Spacer()
             
             CircleButtonView(iconName: "line.3.horizontal")
-                .rotationEffect(Angle(degrees: showForecastList ? 90 : 0))
+                .rotationEffect(Angle(degrees: showForecastList ? 180 : 0))
                 .onTapGesture {
                     showForecastList = true
                     router.showScreen(.push){ _ in

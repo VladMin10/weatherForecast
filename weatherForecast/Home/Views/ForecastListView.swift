@@ -26,36 +26,13 @@ struct ForecastListView: View {
                 
                 VStack {
                     List {
-                        ForEach(vm.forecast?.data ?? [], id: \.validDate) { forecastData in
-                            HStack {
-                                Text(dayOfWeek(from: forecastData.validDate))
-                                    .fontWeight(.medium)
-                                    .font(.system(size: 18))
-                                    .frame(width: UIScreen.main.bounds.width * 0.35, alignment: .leading)
-                                    .padding(.leading, 13)
-                                Spacer()
-                                
-                                if let weatherIcon = forecastData.weather?.icon {
-                                    Image(weatherIcon)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 40, height: 40)
-                                        .frame(width: UIScreen.main.bounds.width * 0.30, alignment: .center)
-                                       
-                                }
-                                
-                                Spacer()
-                                
-                                Text("\(String(format: "%.1f", forecastData.temp ?? 0.0))°C")
-                                    .fontWeight(.medium)
-                                    .font(.system(size: 18))
-                                    .frame(width: UIScreen.main.bounds.width * 0.20, alignment: .trailing)
-                                    .padding(.trailing, 6)
-                            }
-                            .padding(.vertical, 8)
+                       ForEach(vm.forecast?.data ?? [], id: \.validDate) { forecastData in
+                            ForecastListRowView(forecastData: forecastData)
                         }
-                    }
-                }
+                    .listRowBackground(Color.clear) 
+                   }
+                 .listStyle(PlainListStyle())
+               }
             }
             .navigationTitle("16-Day Forecast")
             .onAppear {
