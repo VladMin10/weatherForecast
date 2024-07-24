@@ -29,6 +29,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         guard let latestLocation = locations.first else { return }
         self.location = latestLocation
         locationSubject.send(latestLocation)
+        print("Updated location: \(latestLocation.coordinate.latitude), \(latestLocation.coordinate.longitude)") // Додаткове логування
         locationManager.stopUpdatingLocation()
     }
 

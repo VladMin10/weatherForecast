@@ -9,23 +9,21 @@ import Foundation
 import Combine
 
 class HomeViewModel: ObservableObject {
-    @Published var forecasts: [ForecastData] = []
-    @Published var forecastsFirst: [Forecast] = []
+    @Published var forecast: Forecast? = nil
 
-    private var locationManager: LocationManager
+    private var locationManager = LocationManager()
     private var forecastDataService: ForecastDataService
     private var cancellables = Set<AnyCancellable>()
 
-    init(locationManager: LocationManager = LocationManager()) {
-        self.locationManager = locationManager
+    init() {
         forecastDataService = ForecastDataService(locationManager: locationManager)
         addSubscribers()
     }
 
     private func addSubscribers() {
-        forecastDataService.$allForecasts
-            .sink { [weak self] forecasts in
-                self?.forecasts = forecasts
+        forecastDataService.$forecast
+            .sink { [weak self] forecast in
+                self?.forecast = forecast
             }
             .store(in: &cancellables)
     }
@@ -34,5 +32,8 @@ class HomeViewModel: ObservableObject {
         locationManager.requestLocation()
     }
 }
+
+
+
 
 

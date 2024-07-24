@@ -33,13 +33,12 @@ struct HomeView: View {
                 temperature
                     .foregroundColor(Color.theme.accent)
                     .fontDesign(.rounded)
-                if let firstForecast = vm.forecasts.first {
-                    WeatherRowView(forecastData: firstForecast)
+                if let firstForecast = vm.forecast?.data?.first {
+                                       WeatherRowView(forecastData: firstForecast)
                 } else {
-                   Text("No forecasts available.")
-                      .foregroundColor(.white)
+                    Text("No forecasts available.")
+                        .foregroundColor(.white)
                 }
-                
             }
             .onAppear {
                vm.requestLocation()
@@ -66,10 +65,10 @@ extension HomeView {
         HStack {
             VStack(alignment: .leading, spacing: 6) {
                 HStack(spacing: 2) {
-                    Text("City")
+                    Text(vm.forecast?.cityName ?? "City")
                     Image(systemName: "arrow.up.forward")
                 }
-                .font(.system(size: 18))
+                .font(.system(size: 20))
                 .fontWeight(.regular)
                 .foregroundColor(Color.theme.accent)
                 .background(
@@ -79,8 +78,8 @@ extension HomeView {
                 }
                 
                 Text("Welcome back!")
-                    .font(.system(size: 24))
-                    .fontWeight(.medium)
+                    .font(.system(size: 26))
+                    .fontWeight(.semibold)
                     //.fontDesign(.rounded)
                     .foregroundColor(Color.theme.accent)
             }
@@ -97,18 +96,28 @@ extension HomeView {
         }
     }
     private var temperature : some View {
-        VStack(spacing : 10){
-            Image("c02d")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: screen / 2, height: screen / 2, alignment: .center)
-            Text("Temperature")
+        VStack(spacing : 14){
+            if let firstForecast = vm.forecast?.data?.first,
+               let weatherIcon = firstForecast.weather?.icon {
+                Image("\(weatherIcon)")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: screen / 2, height: screen / 2, alignment: .center)
+            }
+            HStack{
+                Text(vm.forecast?.data?.first?.temp?.description ?? "Temperature")
+                Text("°C")
+            }
                 .fontWeight(.heavy)
-                .font(.system(size: 34))
-            Text("Weather Description")
+                .font(.system(size: 55))
+                .shadow(
+                    color : Color.theme.accent.opacity(0.50),
+                    radius: 20,x : 0, y: 0)
+            
+            Text(vm.forecast?.data?.first?.weather?.description ?? "Weather Description")
                 .fontWeight(.medium)
                 .font(.system(size: 24))
-            Text("Day, time")
+            Text(formattedDateAndTime())
                 .fontWeight(.regular)
                 .font(.system(size: 18))
             HStack(alignment: .center, spacing: 8){
@@ -126,6 +135,7 @@ extension HomeView {
                     )
                 Image(systemName: "arrow.right.circle.fill")
             }
+            
             .fontWeight(.medium)
             .font(.system(size: 23))
             .onTapGesture {

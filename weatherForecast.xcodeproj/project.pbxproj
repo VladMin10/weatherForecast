@@ -24,6 +24,7 @@
 		26574A542C500A1100B5F617 /* WeatherRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26574A532C500A1100B5F617 /* WeatherRowView.swift */; };
 		26574A562C501BB700B5F617 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26574A552C501BB700B5F617 /* LocationManager.swift */; };
 		26574A5B2C50561A00B5F617 /* PreviewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26574A5A2C50561A00B5F617 /* PreviewProvider.swift */; };
+		26574A5D2C50683700B5F617 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26574A5C2C50683700B5F617 /* Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		26574A552C501BB700B5F617 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		26574A572C503E0B00B5F617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		26574A5A2C50561A00B5F617 /* PreviewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewProvider.swift; sourceTree = "<group>"; };
+		26574A5C2C50683700B5F617 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				26574A292C4FD08500B5F617 /* HomeView.swift */,
-				26574A4F2C4FE89A00B5F617 /* SearchView.swift */,
 				26574A512C4FE8C100B5F617 /* ForecastListView.swift */,
+				26574A4F2C4FE89A00B5F617 /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 				26574A492C4FDF0300B5F617 /* Color.swift */,
 				26574A4B2C4FE02400B5F617 /* UIApplication.swift */,
 				26574A5A2C50561A00B5F617 /* PreviewProvider.swift */,
+				26574A5C2C50683700B5F617 /* Time.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				26574A432C4FDAB800B5F617 /* HomeViewModel.swift in Sources */,
 				26574A372C4FD37F00B5F617 /* ForecastModel.swift in Sources */,
 				26574A522C4FE8C100B5F617 /* ForecastListView.swift in Sources */,
+				26574A5D2C50683700B5F617 /* Time.swift in Sources */,
 				26574A5B2C50561A00B5F617 /* PreviewProvider.swift in Sources */,
 				26574A452C4FDDFC00B5F617 /* CircleButtonView.swift in Sources */,
 				26574A472C4FDEAB00B5F617 /* SearchBarView.swift in Sources */,
