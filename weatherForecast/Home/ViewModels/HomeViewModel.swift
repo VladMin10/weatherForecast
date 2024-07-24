@@ -10,10 +10,11 @@ import Combine
 
 class HomeViewModel: ObservableObject {
     @Published var forecast: Forecast? = nil
-
     private var locationManager = LocationManager()
     private var forecastDataService: ForecastDataService
     private var cancellables = Set<AnyCancellable>()
+
+    private var locationLoaded = false // Додайте цю властивість
 
     init() {
         forecastDataService = ForecastDataService(locationManager: locationManager)
@@ -29,9 +30,25 @@ class HomeViewModel: ObservableObject {
     }
 
     func requestLocation() {
-        locationManager.requestLocation()
+        if !locationLoaded {
+            locationManager.requestLocation()
+            locationLoaded = true
+        }
+    }
+
+    func searchCity(_ cityName: String, completion: @escaping (Bool) -> Void) {
+        let encodedCityName = cityName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        forecastDataService.getForecasts(for: encodedCityName) { success in
+            if success {
+                self.forecast = self.forecastDataService.forecast
+                completion(true)
+            } else {
+                completion(false)
+            }
+        }
     }
 }
+
 
 
 
