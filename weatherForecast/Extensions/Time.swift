@@ -23,7 +23,7 @@ func formattedDateAndTime() -> String {
         guard let dateString = dateString else { return "N/A" }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"  // Переконайся, що це правильний формат
+        dateFormatter.dateFormat = "yyyy-MM-dd" 
         
         guard let date = dateFormatter.date(from: dateString) else { return "N/A" }
         
