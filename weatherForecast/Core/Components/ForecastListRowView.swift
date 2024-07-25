@@ -17,6 +17,7 @@ struct ForecastListRowView: View {
                
                HStack(spacing: 16) {
                    Text(dayOfWeek(from: forecastData.validDate))
+                       .foregroundColor(Color.theme.accent)
                        .fontWeight(.medium)
                        .font(.system(size: 18))
                        .frame(width: UIScreen.main.bounds.width * 0.15, alignment: .leading)
@@ -32,6 +33,7 @@ struct ForecastListRowView: View {
                        }
                        if let weatherDescription = forecastData.weather?.description{
                            Text(weatherDescription.capitalized)
+                               .foregroundColor(Color.theme.accent)
                        }
                    }
                    .frame(width: UIScreen.main.bounds.width * 0.40, alignment: .center)
@@ -39,6 +41,7 @@ struct ForecastListRowView: View {
                    
                    
                    Text("\(String(format: "%.1f", forecastData.temp ?? 0.0))°C")
+                       .foregroundColor(Color.theme.accent)
                        .fontWeight(.medium)
                        .font(.system(size: 36))
                        .fontDesign(.serif)

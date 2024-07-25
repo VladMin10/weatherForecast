@@ -98,6 +98,7 @@ extension HomeView {
                         ForecastListView()
                     }
                 }
+                .foregroundColor(Color.theme.accent)
         }
     }
     
@@ -114,6 +115,7 @@ extension HomeView {
                 Text(vm.forecast?.data?.first?.temp?.description ?? "Temperature")
                 Text("°C")
             }
+            .foregroundColor(Color.theme.accent)
             .fontWeight(.heavy)
             .font(.system(size: 55))
             .shadow(
@@ -122,9 +124,11 @@ extension HomeView {
             )
             
             Text(vm.forecast?.data?.first?.weather?.description?.capitalized ?? "Weather Description")
+                .foregroundColor(Color.theme.accent)
                 .fontWeight(.medium)
                 .font(.system(size: 24))
             Text(formattedDateAndTime())
+                .foregroundColor(Color.theme.accent)
                 .fontWeight(.regular)
                 .font(.system(size: 18))
             HStack(alignment: .center, spacing: 8) {

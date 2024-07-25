@@ -35,6 +35,7 @@ struct ForecastListView: View {
                }
             }
             .navigationTitle("16-Day Forecast")
+            
             .onAppear {
                 print("Forecast Data: \(vm.forecast?.data ?? [])")
             }

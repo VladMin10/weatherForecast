@@ -18,6 +18,7 @@ struct WeatherRowView: View {
                     .font(.system(size: 28))
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Sunrise")
+                        .foregroundColor(Color.theme.accent)
                         .fontWeight(.light)
                         .font(.system(size: 16))
                         .fontDesign(.rounded)
@@ -36,6 +37,7 @@ struct WeatherRowView: View {
                     .font(.system(size: 28))
                 VStack(alignment: .leading, spacing: 2) {
                     Text("Sunset")
+                        .foregroundColor(Color.theme.accent)
                         .fontWeight(.light)
                         .font(.system(size: 16))
                         .fontDesign(.rounded)
@@ -51,6 +53,7 @@ struct WeatherRowView: View {
             HStack {
                 VStack(alignment: .leading){
                     Text("Humidity")
+                        .foregroundColor(Color.theme.accent)
                         .fontWeight(.light)
                         .font(.system(size: 16))
                         .fontDesign(.rounded)
@@ -63,6 +66,7 @@ struct WeatherRowView: View {
                 Spacer()
                 VStack(alignment: .leading){
                     Text("Wind")
+                        .foregroundColor(Color.theme.accent)
                         .fontWeight(.light)
                         .font(.system(size: 16))
                         .fontDesign(.rounded)
@@ -79,6 +83,7 @@ struct WeatherRowView: View {
             HStack {
                 VStack(alignment: .leading){
                     Text("Min Temp")
+                        .foregroundColor(Color.theme.accent)
                         .fontWeight(.light)
                         .font(.system(size: 16))
                         .fontDesign(.rounded)
@@ -92,6 +97,7 @@ struct WeatherRowView: View {
                 Spacer()
                 VStack(alignment: .leading){
                     Text("Max Temp")
+                        .foregroundColor(Color.theme.accent)
                         .fontWeight(.light)
                         .font(.system(size: 16))
                         .fontDesign(.rounded)

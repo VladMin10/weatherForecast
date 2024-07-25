@@ -11,7 +11,9 @@ import CoreLocation
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
+    
     @Published var location: CLLocation? = nil
+    
     let locationSubject = PassthroughSubject<CLLocation, Never>()
 
     override init() {
